@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"org.example.model","l":"EnergyLog"},{"p":"org.example.model","l":"LogEntry"},{"p":"org.example.manager","l":"LogManager"},{"p":"org.example.model","l":"MoodLog"},{"p":"org.example.startApplication","l":"StartApplication"},{"p":"org.example.model","l":"TaskLog"}];updateSearchResults();
