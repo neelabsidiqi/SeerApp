@@ -21,7 +21,7 @@ public class LogManager {
      * Adds logs for a specific date by prompting the user to enter types of logs.
      */
     public void addLogs(){
-        System.out.println("Enter the date for this log:");
+        System.out.println("Enter the date for this log: (DD-MM-YY)");
         String date = scanner.nextLine();
         boolean adding = true;
 

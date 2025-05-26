@@ -21,6 +21,7 @@ public class StartApplication {
             System.out.println("4.Save logs to file");
             System.out.println("5.Load logs form file");
             System.out.println("6.Exit");
+            System.out.print("Your coice: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine(); // the nextInt leaves newline character int the input buffer
