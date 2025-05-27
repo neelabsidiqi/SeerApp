@@ -22,7 +22,7 @@ public class LogManager {
          * object that is a subclass of LogEntry
          */
         List<LogEntry> sampleLog = new ArrayList<>();
-        sampleLog.add(new MoodLog("happy", 8));
+        sampleLog.add(new MoodLog("happy ", 8));
         sampleLog.add(new EnergyLog(7, "Felt good after a walk"));
         sampleLog.add(new TaskLog("Read a book", "Completed"));
         logsByDate.put("2024-05-25", sampleLog);
