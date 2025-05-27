@@ -25,8 +25,8 @@ public class MoodLog extends LogEntry {
         this.type = type;
     }
     @Override
-    public void display() {
-        System.out.println("Mood: " + type + " ("+level+")");
+    public String toString() {
+        return "Mood: " + type + " ("+level+")";
 
     }
 }

@@ -13,8 +13,40 @@ public class LogManager {
     Map<String,List<LogEntry>> logsByDate = new HashMap<>();
 
 
+
     public LogManager(Scanner scanner){
         this.scanner = scanner;
+
+        /**
+         * Because of polymorphism in Java, a list of the parent type can hold any
+         * object that is a subclass of LogEntry
+         */
+        List<LogEntry> sampleLog = new ArrayList<>();
+        sampleLog.add(new MoodLog("happy", 8));
+        sampleLog.add(new EnergyLog(7, "Felt good after a walk"));
+        sampleLog.add(new TaskLog("Read a book", "Completed"));
+        logsByDate.put("2024-05-25", sampleLog);
+
+    }
+
+    /**
+     * viewLogs lets us view all teh logs we have made previously by date.
+     * I made a variable that takes the key(date) from the map
+     * and a List that contains the entry list from teh map
+     * then I loop through the List to print each log.
+     */
+    public void viewLogs(){
+        for(Map.Entry<String, List<LogEntry>> entry : logsByDate.entrySet()){
+
+            String date = entry.getKey();
+            List<LogEntry> logedEntries = entry.getValue();
+
+            System.out.println("Logs for: " + date);
+            for(LogEntry log: logedEntries){
+                System.out.println( "-" + log);
+            }
+        }
+
     }
 
     /**
@@ -88,5 +120,6 @@ public class LogManager {
         dayLogs.add(new TaskLog(name,status));
         logsByDate.put(date,dayLogs);
     }
+
 
 }

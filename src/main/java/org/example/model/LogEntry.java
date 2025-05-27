@@ -14,7 +14,7 @@ public abstract class LogEntry {
     public void setDate(String date) {
         this.date = date;
     }
-    public abstract void display();
+    public abstract String toString();
 
 
 }

@@ -26,8 +26,8 @@ public class TaskLog extends LogEntry{
     }
 
     @Override
-    public void display() {
-        System.out.println("Task: "+ task + "| Completed: " + status);
+    public String toString() {
+        return "Task: "+ task + "| Completed: " + status;
     }
 
 }

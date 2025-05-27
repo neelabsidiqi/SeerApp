@@ -27,7 +27,7 @@ public class StartApplication {
             scanner.nextLine(); // the nextInt leaves newline character int the input buffer
             switch (choice){
                 case 1: logManager.addLogs(); break; // a method to show the log
-                case 2: break;
+                case 2: logManager.viewLogs(); break;
                 case 3: break;
                 case 4: break;
                 case 5: break;

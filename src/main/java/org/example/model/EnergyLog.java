@@ -27,7 +27,7 @@ public class EnergyLog extends LogEntry {
     }
 
     @Override
-    public void display() {
-        System.out.println("Energy: " + level + "|Note: "+note);
+    public String toString() {
+        return "Energy: " + level + "|Note: "+note;
     }
 }
