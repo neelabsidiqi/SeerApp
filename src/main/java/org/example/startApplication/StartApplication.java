@@ -10,7 +10,7 @@ public class StartApplication {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LogManager logManager = new LogManager(scanner);
-        System.out.println("Welcome to Seer");
+        System.out.println("Welcome to Seer 🥰");
         boolean running = true;
 
         while(running){
