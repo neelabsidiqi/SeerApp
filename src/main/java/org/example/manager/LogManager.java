@@ -9,6 +9,11 @@ import java.util.*;
 public class LogManager {
     // to avoid multiple scanners, we are doing so the class accepts one
     private Scanner scanner;
+
+    public Map<String, List<LogEntry>> getLogsByDate() {
+        return logsByDate;
+    }
+
     //key is date, value is List<LogEntry>
     Map<String,List<LogEntry>> logsByDate = new HashMap<>();
 
@@ -103,6 +108,7 @@ public class LogManager {
         scanner.nextLine();
         System.out.print("Note: ");
         String note = scanner.nextLine();
+
         List<LogEntry> dayLogs = logsByDate.getOrDefault(date,new ArrayList<>());
         dayLogs.add(new EnergyLog(energyLevel,note));
         logsByDate.put(date,dayLogs);
