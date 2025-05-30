@@ -14,8 +14,6 @@ public class StartApplication {
             Scanner scanner = new Scanner(System.in);
 
             LogManager logManager = new LogManager(scanner);
-            LogFileHandler lfh = new LogFileHandler();
-
 
             System.out.println("Welcome to Seer 🥰");
             boolean running = true;
@@ -36,8 +34,8 @@ public class StartApplication {
                     case 1: logManager.addLogs(); break; // a method to show the log
                     case 2: logManager.viewLogs(); break;
                     case 3: break;
-                    case 4: lfh.saveLogsToFile(logManager.getLogsByDate()); break;
-                    case 5: break;
+                    case 4: LogFileHandler.saveLogsToFile(logManager.getLogsByDate()); break;
+                    case 5: LogFileHandler.loadLogsFromFile();break;
                     case 6: running = false; break;
                 }
             }
