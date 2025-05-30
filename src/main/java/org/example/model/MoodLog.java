@@ -26,7 +26,6 @@ public class MoodLog extends LogEntry {
     }
     @Override
     public String toString() {
-        return "Mood: " + type + " ("+level+")";
-
+        return "MoodLog|"+ type + "|"+level;
     }
 }

@@ -28,6 +28,6 @@ public class EnergyLog extends LogEntry {
 
     @Override
     public String toString() {
-        return "Energy: " + level + "|Note: "+note;
+        return "EnergyLog|"+ level + "|"+note;
     }
 }

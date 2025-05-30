@@ -1,5 +1,18 @@
-Date: 2024-05-25
-- Mood: happy  (8)
-- Energy: 7|Note: Felt good after a walk
-- Task: Read a book| Completed: Completed
+Date:2025-05-30
+- MoodLog|happy|8
+- EnergyLog|7|Felt good after a walk
+- TaskLog|Read a book|Completed
+
+Date:2025-05-31
+- MoodLog|calm|6
+- EnergyLog|6|Slept well
+- TaskLog|Finish assignment|In Progress
+
+Date:02-02-33
+- MoodLog|happy+|3
+
+Date:2024-05-25
+- MoodLog|happy|8
+- EnergyLog|7|Felt good after a walk
+- TaskLog|Read a book|Completed
 

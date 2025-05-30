@@ -9,31 +9,37 @@ import java.util.*;
 public class LogManager {
     // to avoid multiple scanners, we are doing so the class accepts one
     private Scanner scanner;
-
-    public Map<String, List<LogEntry>> getLogsByDate() {
-        return logsByDate;
-    }
-
     //key is date, value is List<LogEntry>
     Map<String,List<LogEntry>> logsByDate = new HashMap<>();
-
-
-
+/********************************************************************************************/
     public LogManager(Scanner scanner){
         this.scanner = scanner;
-
         /**
          * Because of polymorphism in Java, a list of the parent type can hold any
          * object that is a subclass of LogEntry
          */
         List<LogEntry> sampleLog = new ArrayList<>();
-        sampleLog.add(new MoodLog("happy ", 8));
+        sampleLog.add(new MoodLog("happy", 8));
         sampleLog.add(new EnergyLog(7, "Felt good after a walk"));
         sampleLog.add(new TaskLog("Read a book", "Completed"));
         logsByDate.put("2024-05-25", sampleLog);
 
     }
+    /********************************************************************************************/
+    public Map<String, List<LogEntry>> getLogsByDate() {
+        return logsByDate;
+    }
+    /********************************************************************************************/
+    public void mergeLogs(Map<String,List<LogEntry>> newLogs){
+        for(Map.Entry<String,List<LogEntry>> entry : newLogs.entrySet()){
+            String date = entry.getKey();
+            List<LogEntry> newEntries = entry.getValue();
 
+            logsByDate.putIfAbsent(date,new ArrayList<>());
+            logsByDate.get(date).addAll(newEntries);
+        }
+    }
+/********************************************************************************************/
     /**
      * viewLogs lets us view all teh logs we have made previously by date.
      * I made a variable that takes the key(date) from the map
@@ -46,14 +52,15 @@ public class LogManager {
             String date = entry.getKey();
             List<LogEntry> logedEntries = entry.getValue();
 
-            System.out.println("Logs for: " + date);
+            System.out.println("🐥Logs for:" + date);
             for(LogEntry log: logedEntries){
                 System.out.println( "-" + log);
             }
+            System.out.println("💖----------------------------------💖");
         }
 
     }
-
+/********************************************************************************************/
     /**
      * Adds logs for a specific date by prompting the user to enter types of logs.
      */
@@ -61,16 +68,17 @@ public class LogManager {
         System.out.println("Enter the date for this log: (DD-MM-YY)");
         String date = scanner.nextLine();
         boolean adding = true;
-
         while(adding){
+            System.out.println();
             System.out.println("What would you like to log? ");
-            System.out.println("1. Mood");
-            System.out.println("2. Energy");
-            System.out.println("3. Task");
+            System.out.println("1. Mood 🌈");
+            System.out.println("2. Energy 🔋");
+            System.out.println("3. Task ✅");
             System.out.println("4. back to menu");
-            System.out.print("Your choice:");
+            System.out.print("Your choice👀:");
             int choice = scanner.nextInt();
             scanner.nextLine();
+            System.out.println();
             switch (choice){
                 case 1: addMood(date); break;
                 case 2: addEnergy(date); break;
@@ -80,6 +88,7 @@ public class LogManager {
             }
         }
     }
+/********************************************************************************************/
     /**
      * Adds a mood entry for a specific date
      * @param date the date of the log
@@ -97,7 +106,7 @@ public class LogManager {
         //and add it to out map
         logsByDate.put(date,dayLogs);
     }
-
+/********************************************************************************************/
     /**
      * Adds an energy entry for a specific date.
      * @param date The date of the log.
@@ -113,6 +122,7 @@ public class LogManager {
         dayLogs.add(new EnergyLog(energyLevel,note));
         logsByDate.put(date,dayLogs);
     }
+/********************************************************************************************/
     /**
      * Adds a task entry for a specific date.
      * @param date The date of the log.
@@ -126,6 +136,5 @@ public class LogManager {
         dayLogs.add(new TaskLog(name,status));
         logsByDate.put(date,dayLogs);
     }
-
 
 }

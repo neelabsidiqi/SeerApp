@@ -27,7 +27,7 @@ public class TaskLog extends LogEntry{
 
     @Override
     public String toString() {
-        return "Task: "+ task + "| Completed: " + status;
+        return "TaskLog|"+task + "|" + status;
     }
 
 }

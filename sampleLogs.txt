@@ -1,9 +1,9 @@
 Date: 2025-05-30
-- MoodLog: happy (level 8)
-- EnergyLog: level 7 - Felt productive in the morning
-- TaskLog: Finish reading design book [Completed]
+MoodLog|happy|8
+EnergyLog|7|Felt good after a walk
+TaskLog|Read a book|Completed
 
-Date: 2025-05-29
-- MoodLog: anxious (level 5)
-- EnergyLog: level 4 - Couldn't sleep well
-- TaskLog: Clean desk [Pending]
+Date: 2025-05-31
+MoodLog|calm|6
+EnergyLog|6|Slept well
+TaskLog|Finish assignment|In Progress
