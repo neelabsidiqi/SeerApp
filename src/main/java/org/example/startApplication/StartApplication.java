@@ -1,5 +1,6 @@
 package org.example.startApplication;
 
+import org.example.manager.AnalysisManager;
 import org.example.manager.LogManager;
 import org.example.utils.LogFileHandler;
 import java.util.Map;
@@ -17,6 +18,7 @@ public class StartApplication {
             Scanner scanner = new Scanner(System.in);
 
             LogManager logManager = new LogManager(scanner);
+            AnalysisManager analysisManager = new AnalysisManager(logManager,scanner);
 
             System.out.println("❤️‍🔥Welcome to Seer 🥰");
             boolean running = true;
@@ -37,7 +39,7 @@ public class StartApplication {
                     case 1: logManager.addLogs(); break; // a method to show the log
                     case 2: logManager.viewLogs(); break;
 
-                    case 3: break;
+                    case 3: analysisManager.analyzeEntries(); break;
 
                     case 4: LogFileHandler.saveLogsToFile(logManager.getLogsByDate());
                             break;

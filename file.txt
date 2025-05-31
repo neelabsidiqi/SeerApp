@@ -8,9 +8,6 @@ Date:2025-05-31
 - EnergyLog|6|Slept well
 - TaskLog|Finish assignment|In Progress
 
-Date:02-02-33
-- MoodLog|happy+|3
-
 Date:2024-05-25
 - MoodLog|happy|8
 - EnergyLog|7|Felt good after a walk
