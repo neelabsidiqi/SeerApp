@@ -1,6 +1,6 @@
 package org.example.model;
 
-public class MoodLog extends LogEntry {
+public class MoodLog extends LogEntry  implements Comparable<MoodLog>{
     private String type;
     private int level;
 
@@ -27,5 +27,11 @@ public class MoodLog extends LogEntry {
     @Override
     public String toString() {
         return "MoodLog|"+ type + "|"+level;
+    }
+
+    @Override
+    public int compareTo(MoodLog other) {
+        return Integer.compare(this.level,other.level);//low to high
+        //to use Collections.sort(moodLogs)
     }
 }

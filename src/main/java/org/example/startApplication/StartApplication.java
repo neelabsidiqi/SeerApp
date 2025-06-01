@@ -1,28 +1,21 @@
 package org.example.startApplication;
-
 import org.example.manager.AnalysisManager;
 import org.example.manager.LogManager;
 import org.example.utils.LogFileHandler;
 import java.util.Map;
 import java.util.List;
 import org.example.model.LogEntry;
-
 import java.io.IOException;
 import java.util.Scanner;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class StartApplication {
     public static void main(String[] args)  {
         try{
             Scanner scanner = new Scanner(System.in);
-
             LogManager logManager = new LogManager(scanner);
             AnalysisManager analysisManager = new AnalysisManager(logManager,scanner);
 
             System.out.println("❤️‍🔥Welcome to Seer 🥰");
             boolean running = true;
-
             while(running){
                 System.out.println("✨✨✨Choose an option✨✨✨");
                 System.out.println("1.Add log➕");

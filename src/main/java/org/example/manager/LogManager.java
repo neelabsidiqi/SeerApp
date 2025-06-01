@@ -1,6 +1,8 @@
 package org.example.manager;
 import org.example.model.*;
 import java.util.*;
+import java.util.stream.Collectors;
+
 /**
  * Manages user log entries like mood, energy, and tasks for specific dates.
  * Stores logs in a map where the key is the date and the value is a list of entries.
@@ -28,6 +30,15 @@ public class LogManager {
     /********************************************************************************************/
     public Map<String, List<LogEntry>> getLogsByDate() {
         return logsByDate;
+    }
+    public Set<String> getAllDates(){
+        return logsByDate.keySet();
+    }
+    public List<LogEntry> getLogsForDate(String date){
+        return logsByDate.getOrDefault(date,Collections.emptyList());
+    }
+    public List<LogEntry> getAllEntries(){
+        return logsByDate.values().stream().flatMap(List::stream).collect(Collectors.toList());
     }
     /********************************************************************************************/
     public void mergeLogs(Map<String,List<LogEntry>> newLogs){
@@ -58,14 +69,15 @@ public class LogManager {
             }
             System.out.println("💖----------------------------------💖");
         }
-
     }
+
+    //THE CODE BELLOW CONTAINS, addLog, addMood, addEnergy, addTask
 /********************************************************************************************/
     /**
      * Adds logs for a specific date by prompting the user to enter types of logs.
      */
     public void addLogs(){
-        System.out.println("Enter the date for this log: (DD-MM-YY)");
+        System.out.println("Enter the date for this log: (YYYY-MM-DD)");
         String date = scanner.nextLine();
         boolean adding = true;
         while(adding){
