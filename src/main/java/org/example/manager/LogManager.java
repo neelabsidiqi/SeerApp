@@ -1,8 +1,11 @@
 package org.example.manager;
+import com.fasterxml.jackson.core.JsonToken;
 import org.example.model.*;
 import java.util.*;
 import java.util.stream.Collectors;
-
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 /**
  * Manages user log entries like mood, energy, and tasks for specific dates.
  * Stores logs in a map where the key is the date and the value is a list of entries.
@@ -76,11 +79,17 @@ public class LogManager {
     /**
      * Adds logs for a specific date by prompting the user to enter types of logs.
      */
-    public void addLogs(){
-        System.out.println("Enter the date for this log: (YYYY-MM-DD)");
-        String date = scanner.nextLine();
+    public void addLogs() {
+        String date;
+        while(true){
+            System.out.println("Enter the date for this log: (YYYY-MM-DD)");
+            date = scanner.nextLine();
+            if(isISODate(date)){
+                break;
+            }
+        }
         boolean adding = true;
-        while(adding){
+        while (adding) {
             System.out.println();
             System.out.println("What would you like to log? ");
             System.out.println("1. Mood 🌈");
@@ -91,13 +100,33 @@ public class LogManager {
             int choice = scanner.nextInt();
             scanner.nextLine();
             System.out.println();
-            switch (choice){
-                case 1: addMood(date); break;
-                case 2: addEnergy(date); break;
-                case 3: addTask(date);break;
-                case 4: adding = false; break;
+            switch (choice) {
+                case 1:
+                    addMood(date);
+                    break;
+                case 2:
+                    addEnergy(date);
+                    break;
+                case 3:
+                    addTask(date);
+                    break;
+                case 4:
+                    adding = false;
+                    break;
 
             }
+        }
+
+    }
+
+    public static boolean isISODate(String dateStr) {
+        try {
+            // This will throw an exception if not a valid ISO date
+            LocalDate.parse(dateStr, DateTimeFormatter.ISO_LOCAL_DATE);
+            return true;
+        } catch (DateTimeParseException e) {
+            System.out.println("It seems like your date format is not correct 🤔");
+            return false;
         }
     }
 /********************************************************************************************/

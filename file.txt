@@ -1,3 +1,11 @@
+Date:2025-06-01
+- EnergyLog|9|I loved finishing my apppp
+
+Date:2024-05-25
+- MoodLog|happy|8
+- EnergyLog|7|Felt good after a walk
+- TaskLog|Read a book|Completed
+
 Date:2025-05-30
 - MoodLog|happy|8
 - EnergyLog|7|Felt good after a walk
@@ -12,11 +20,6 @@ Date:2025-05-31
 - MoodLog|happy|6
 - EnergyLog|6|Slept well
 - TaskLog|Finish assignment|In Progress
-
-Date:2025-06-01
-- MoodLog|happy|6
-- EnergyLog|6|I finished my app(not fully tho)
-- TaskLog|app|finished
 
 Date:2024-05-25
 - MoodLog|happy|8

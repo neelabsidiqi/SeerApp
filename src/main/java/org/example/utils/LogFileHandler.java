@@ -26,7 +26,7 @@ public class LogFileHandler {
      */
     public static void saveLogsToFile(Map<String,List<LogEntry>> lbd) throws IOException {
         System.out.println("saving....");
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("file.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("file.txt",true))) {
             for (Map.Entry<String, List<LogEntry>> entry : lbd.entrySet()) {
                 writer.write("Date:" + entry.getKey());
                 writer.newLine();
