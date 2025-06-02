@@ -8,15 +8,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * analyze the most common mood overall
- * days with extremely high or low mood
- * average energy level
- * average energy level for a specific month
- * notes associated with low energy
- * frequency of a specific word
- * most common task status
- */
 public class AnalysisManager {
     private Scanner scanner;
     private LogManager logManager;
@@ -47,19 +38,6 @@ public class AnalysisManager {
         }
         System.out.println("🌈 Most common mood: " + mostCommonMood + "("+maxCount+")");
     }
-
-
-    /**
-     * Method analyzemood(yearMonth)
-     * 1. take the date and turn it into a comparable format
-     * 2. I gather all the mood logs
-     * 3. but only keep the ones with the date user gave me.
-     * 4. I check what type they are
-     * 5. how many times each type has occurred
-     * 6. I find the one that has occurred the most
-     * 7. I let the user know which mood occurred the most that month
-     *
-     */
     public void analyzeMood(String yearMonth) {
 
         int maxCount = 0;
@@ -79,10 +57,6 @@ public class AnalysisManager {
                      }
                  }
              }
-            // gather all the moods for that month
-            //probabaly in a hashmap so we have the keys as moods and the times they have occured
-            // as values.
-            // then we show the mood that has occured the most.
            for(Map.Entry<String,Integer> mood : moodsNmonth.entrySet()){
                if(mood.getValue() > maxCount){
                    mostCommonMood = mood.getKey();
