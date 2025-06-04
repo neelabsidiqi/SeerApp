@@ -15,7 +15,6 @@ import java.io.*;
 import java.util.stream.Stream;
 
 public class LogFileHandler {
-
     /**
      *saves all log entries groupes by date into a text file names "file.text"
      * Uses a BufferedWriter to writer data efficiently, and ensures the writer
@@ -31,7 +30,7 @@ public class LogFileHandler {
                 writer.write("Date:" + entry.getKey());
                 writer.newLine();
                 for (LogEntry log : entry.getValue()) {
-                    writer.write("- " + log.toString());
+                    writer.write(log.toString());
                     writer.newLine();
                 }
                 writer.newLine();

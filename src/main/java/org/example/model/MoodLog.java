@@ -7,8 +7,8 @@ public class MoodLog extends LogEntry  implements Comparable<MoodLog>{
     public MoodLog(String type, int level){
         this.type = type;
         this.level = level;
-
     }
+
     public int getLevel() {
         return level;
     }
